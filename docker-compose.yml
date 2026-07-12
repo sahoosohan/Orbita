@@ -1,0 +1,22 @@
+services:
+  db:
+    container_name: orbita_db
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: orbita
+    ports:
+      - "5431:5432"
+    # restart: unless-stopped
+    # volumes:
+    #   - orbita_pgdata:/var/lib/postgresql/data
+    # healthcheck:
+    #   test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d orbita"]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 5
+    #   start_period: 10s
+
+volumes:
+  orbita_pgdata:
