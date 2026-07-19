@@ -15,7 +15,7 @@ const Navbar = () => {
             alt="Vibe"
             width={32}
             height={32}
-            className="shrink-0 invert dark:invert-0"
+            className="shrink-0 dark:invert"
           />
         </Link>
 

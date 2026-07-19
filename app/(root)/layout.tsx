@@ -2,7 +2,11 @@ import { onBoardUser } from '@/modules/auth/actions'
 import Navbar from '@/modules/home/components/navbar'
 import React from 'react'
 
-const Layout = async({ children }:any) => {
+type LayoutProps = Readonly<{
+  children: React.ReactNode
+}>
+
+const Layout = async({ children }: LayoutProps) => {
   await onBoardUser()
   return (
     <main className="relative flex min-h-screen overflow-x-hidden bg-background bg-[radial-gradient(#dadde2_1px,transparent_1px)] bg-size-[16px_16px] dark:bg-[radial-gradient(#393e4a_1px,transparent_1px)]">
